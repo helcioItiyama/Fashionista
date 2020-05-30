@@ -1,0 +1,87 @@
+.card {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-auto-flow: row;
+  overflow: hidden;
+}
+
+.card__container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  grid-gap: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 8px #999999;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card__tag {
+  position: absolute;
+  left: 0;
+  font-size: 3em;
+  color: red;
+  overflow: hidden;
+}
+
+.card__deal {
+  position: absolute;
+  font-weight: bold;
+  left: 10px;
+  top: 14px;
+}
+
+.card__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card__footer {
+  background-color: wheat;
+  padding: 8px;
+  color: black;
+  text-align: center;
+}
+
+.card__title {
+  font-size: 1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.card__price {
+  font-weight: bold;
+}
+
+.card__price--discount {
+  color: #999;
+  font-size: 0.7em;
+  text-decoration: line-through;
+}
+
+@media(min-width: 760px) {
+.card__container {
+  box-shadow: initial;
+  transition: transform 2000ms;
+  height: fit-content;
+}
+
+.card:focus-within .card__container,
+.card:hover .card__container {
+  transform: translateX(-8%)
+}
+
+.card__container:focus ~ .card__container,
+.card__container:hover ~.card__container {
+  transform: translateX(8%)
+}
+
+.card .card__container:focus,
+.card .card__container:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 2px 6px #999999;
+}
+}

@@ -1,0 +1,125 @@
+.modal {
+  margin-top: 6px;
+  position: absolute;
+  background-color: #fff;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal__header {
+  background-color: wheat;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.modal__close-modal {
+  position: absolute;
+  border: none;
+  color: black;
+  font-size: 1.5em;
+  background-color: wheat;
+  left: 10px;
+  top: 12px;
+}
+
+.modal__title {
+  margin: 0 auto;
+}
+
+.modal__section {
+  padding: 20px 12px 0;
+}
+
+.modal__section-border {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid #999999;
+  padding-bottom: 20px;
+}
+
+.modal__image {
+  height: 100px;
+  object-fit: cover;
+  box-shadow: 1px 1px 4px #999999;
+}
+
+.modal__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.modal__price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.modal__price-wrapper {
+  height: 40px;
+}
+
+.modal__installments {
+  color: #999999;
+  font-size: 0.8em;
+  margin-top: 8px;
+}
+
+.modal__button {
+  font-size: 0.7em;
+  padding: 4px;
+  background: wheat;
+  color: #999999;
+  font-weight: bold;
+  border: 1px solid #999999;
+}
+
+.modal__button:hover {
+  background: red;
+  color: black;
+}
+
+.modal__count-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0eaea;
+}
+
+.modal__add, .modal__remove {
+  padding: 2px 8px;
+  font-weight: bold;
+  background: wheat;
+  color: #999999;
+  border: 1px solid #999999;
+}
+
+.modal__footer {
+  padding: 12px;
+  background: #1a0000;
+}
+
+.modal__total-value {
+  color: wheat;
+  text-align: center;
+}
+
+@media(min-width: 768px) {
+  .modal__section {
+    padding: 20px 60px 0;
+  }
+}
+
+@media(min-width: 1024px) {
+
+  .modal__section {
+    border: 1px solid black;
+    width: 400px;
+    right: 0;
+  }
+}

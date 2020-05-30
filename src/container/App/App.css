@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, button {
+  font: 14px Roboto, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 90px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 83vh;
+}
+
+@media(min-width: 760px) {
+  .container {
+    margin-top: 80px;
+    max-width: 800px;
+  }
+}
+
+@media(min-width: 1400px) {
+  .container{
+    max-width: 800px;
+  }
+}
+
