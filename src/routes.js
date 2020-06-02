@@ -7,7 +7,7 @@ export default function Routes() {
   return (
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/products" component={Products} />
+      <Route path="/products/:item" component={Products} />
     </Switch>
   );
 }

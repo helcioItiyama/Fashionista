@@ -6,17 +6,21 @@
   overflow: hidden;
 }
 
+.card__link {
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px #999999;
+}
+
 .card__container {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  margin-top: 20px;
   grid-gap: 8px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 2px 8px #999999;
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .card__tag {
@@ -30,6 +34,7 @@
 .card__deal {
   position: absolute;
   font-weight: bold;
+  color: #1a0000;
   left: 10px;
   top: 14px;
 }
@@ -39,11 +44,19 @@
   object-fit: cover;
 }
 
+.card__image--notfound {
+  width: 100%;
+  object-fit: cover;
+}
+
 .card__footer {
   background-color: wheat;
+  height: 70px;
   padding: 8px;
   color: black;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .card__title {
@@ -53,6 +66,7 @@
 }
 
 .card__price {
+  margin-top: auto;
   font-weight: bold;
 }
 
@@ -62,25 +76,26 @@
   text-decoration: line-through;
 }
 
+
 @media(min-width: 760px) {
-.card__container {
+.card__link {
   box-shadow: initial;
   transition: transform 2000ms;
   height: fit-content;
 }
 
-.card:focus-within .card__container,
-.card:hover .card__container {
+.card:focus-within .card__link,
+.card:hover .card__link {
   transform: translateX(-8%)
 }
 
-.card__container:focus ~ .card__container,
-.card__container:hover ~.card__container {
+.card__link:focus ~ .card__link,
+.card__link:hover ~.card__link {
   transform: translateX(8%)
 }
 
-.card .card__container:focus,
-.card .card__container:hover {
+.card .card__link:focus,
+.card .card__link:hover {
   transform: scale(1.1);
   box-shadow: 0px 2px 6px #999999;
 }
