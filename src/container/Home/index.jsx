@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FaTag } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Modal from '../../components/Modal';
+import { getProducts } from '../../actions';
+// import Modal from '../../components/Modal';
 
 import './Home.css';
-import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getApi = async () => {
@@ -17,10 +19,12 @@ export default function Home() {
         'https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog'
       );
       const json = await response.json();
-      setData(json);
+      dispatch(getProducts(json));
     };
     getApi();
-  }, []);
+  }, [dispatch]);
+
+  const store = useSelector((state) => state.payload);
 
   return (
     <>
@@ -29,11 +33,11 @@ export default function Home() {
       {/* <Modal /> */}
 
       <main className="container card">
-        {data &&
-          data.map((item) => (
+        {store &&
+          store.map((item, index) => (
             <Link
               key={item.name}
-              to={`/products/${item.name}`}
+              to={`/products/${index}`}
               className="card__link"
             >
               <article className="card__container">
