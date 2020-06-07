@@ -16,14 +16,18 @@ export default function Footer() {
       </p>
 
       <div>
-        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaFacebookSquare className="footer__icons footer__icons--facebook" />
         </a>
 
         <a
           href="https://twitter.com/login?lang=pt"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <FaTwitterSquare className="footer__icons footer__icons--twitter" />
         </a>
@@ -31,7 +35,7 @@ export default function Footer() {
         <a
           href="https://www.instagram.com/?hl=pt-br"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <FaInstagramSquare className="footer__icons footer__icons--instagram" />
         </a>

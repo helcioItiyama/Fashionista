@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 
 import { FaSearch } from 'react-icons/fa';
 import { IoIosCart } from 'react-icons/io';
-import logo from '../../logo.png';
+import { useSelector } from 'react-redux';
+import logo from '../../assets/images/logo.png';
 
 import './Header.css';
 
 export default function Header() {
+  const { productAmount } = useSelector((state) => state.cartReducer);
+
   return (
     <header className="header">
       <div className="header__wrapper">
@@ -24,7 +27,9 @@ export default function Header() {
           <FaSearch className="header__icon" />
           <Link to="/" className="header__cart-counter">
             <IoIosCart className="header__icon--cart" />
-            <h3 className="header__count">3</h3>
+            {productAmount && (
+              <h3 className="header__count">{productAmount}</h3>
+            )}
           </Link>
         </div>
       </div>

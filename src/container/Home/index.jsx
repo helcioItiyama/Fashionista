@@ -5,41 +5,33 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { getProducts } from '../../actions';
-// import Modal from '../../components/Modal';
+import { getProducts } from '../../store/actions/actions';
+import Modal from '../../components/Modal';
 
 import './Home.css';
 
 export default function Home() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const getApi = async () => {
-      const response = await fetch(
-        'https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog'
-      );
-      const json = await response.json();
-      dispatch(getProducts(json));
-    };
-    getApi();
-  }, [dispatch]);
+  const store = useSelector((state) => state.reducer);
 
-  const store = useSelector((state) => state.payload);
+  useEffect(() => {
+    if (store.length > 0) {
+      return;
+    }
+    dispatch(getProducts());
+  }, [dispatch, store]);
 
   return (
     <>
       <Header />
 
-      {/* <Modal /> */}
+      {store.isModal && <Modal />}
 
       <main className="container card">
         {store &&
           store.map((item, index) => (
-            <Link
-              key={item.name}
-              to={`/products/${index}`}
-              className="card__link"
-            >
+            <Link key={index} to={`/products/${index}`} className="card__link">
               <article className="card__container">
                 {item.discount_percentage !== '' && (
                   <>

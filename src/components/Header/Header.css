@@ -56,7 +56,7 @@
 
 .header__cart-counter {
   position: relative;
-
+  text-decoration: none;
 }
 
 .header__count {

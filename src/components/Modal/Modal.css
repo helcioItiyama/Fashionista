@@ -7,6 +7,7 @@
 
 .modal__header {
   background-color: wheat;
+  box-shadow: 1px 1px 4px #999999;
   padding: 12px;
   display: flex;
   align-items: center;
@@ -27,13 +28,13 @@
 }
 
 .modal__section {
-  padding: 20px 12px 0;
+  padding: 20px 10px 0;
 }
 
 .modal__section-border {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-bottom: 1px solid #999999;
   padding-bottom: 20px;
 }
@@ -47,8 +48,16 @@
 .modal__info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  width: 150px;
   height: 100px;
+}
+
+.modal__product-name {
+  font-size: 0.8em;
+  font-weight: 700;
+  text-align: center;
 }
 
 .modal__price {
@@ -75,6 +84,7 @@
   color: #999999;
   font-weight: bold;
   border: 1px solid #999999;
+  box-shadow: 1px 1px 4px #999999;
 }
 
 .modal__button:hover {
@@ -86,7 +96,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100px;
   background-color: #f0eaea;
+  box-shadow: 1px 1px 4px #999999;
+}
+
+.modal__add:hover, .modal__remove:hover {
+  background: #1a0000;
+  color: wheat;
 }
 
 .modal__add, .modal__remove {
@@ -113,27 +130,29 @@
   }
 
   .modal__section {
-    padding: 20px 60px 0;
+    padding: 20px 20px 0;
   }
 }
 
 @media(min-width: 1024px) {
   .modal {
     z-index: 2;
-    top: 0;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
+    top: 2px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
   }
 
   .modal__wrapper {
-    position: absolute;
+    position: fixed;
     border: 1px solid black;
+    height: 89vh;
+    overflow: auto;
     background-color: #fff;
     width: 400px;
     right: 0;
   }
 
   .modal__section-wrapper {
-    height: 80vh;
+    min-height: 76vh;
   }
 }
