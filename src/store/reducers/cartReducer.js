@@ -1,8 +1,15 @@
-import { ADD_TO_CART_SUCCESS, CLOSE_MODAL } from '../actions/actionsTypes';
+/* eslint-disable no-case-declarations */
+import {
+  ADD_TO_CART_SUCCESS,
+  UPDATE_CART_PRODUCT,
+  UPDATE_COUNTER_SUCCESS,
+  REMOVE_PRODUCT_SUCCESS,
+} from '../actions/actionsTypes';
 
 const initialState = {
   productToCart: [],
-  isModal: false,
+  totalCount: 0,
+  totalPrice: 0,
 };
 
 export default function cartReducer(state = initialState, { type, payload }) {
@@ -10,14 +17,32 @@ export default function cartReducer(state = initialState, { type, payload }) {
     case ADD_TO_CART_SUCCESS:
       return {
         ...state,
-        isModal: true,
         productToCart: [...state.productToCart, payload],
       };
 
-    case CLOSE_MODAL:
+    case UPDATE_CART_PRODUCT:
+      // eslint-disable-next-line no-case-declarations
+      const index = state.productToCart.findIndex(
+        (product) => product.id === payload.id
+      );
+      state.productToCart[index] = payload;
+      const newProductToCart = state.productToCart;
       return {
         ...state,
-        isModal: false,
+        productToCart: newProductToCart,
+      };
+
+    case REMOVE_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        productToCart: payload,
+      };
+
+    case UPDATE_COUNTER_SUCCESS:
+      return {
+        ...state,
+        totalCount: payload.totalCount,
+        totalPrice: payload.totalPrice,
       };
 
     default:

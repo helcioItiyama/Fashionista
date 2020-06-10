@@ -1,13 +1,16 @@
 .modal {
-  margin-top: 95px;
+  top: 98px;
   background-color: #fff;
   width: 100vw;
-  height: 100vh;
+  height: 83vh;
+  position: fixed;
+  overflow: auto;
+  z-index: 3;
 }
 
 .modal__header {
   background-color: wheat;
-  box-shadow: 1px 1px 4px #999999;
+  box-shadow: 0px 0px 20px -1px rgb(245, 187, 79) inset;
   padding: 12px;
   display: flex;
   align-items: center;
@@ -18,13 +21,17 @@
   border: none;
   color: black;
   font-size: 1.5em;
-  background-color: wheat;
+  background-color: transparent;
   left: 10px;
   top: 12px;
 }
 
 .modal__title {
   margin: 0 auto;
+}
+
+.modal__section-wrapper {
+  min-height: 67vh;
 }
 
 .modal__section {
@@ -80,11 +87,11 @@
 .modal__button {
   font-size: 0.7em;
   padding: 4px;
-  background: wheat;
+  background-color: wheat;
+  box-shadow: 0px 0px 10px -2px rgb(245, 187, 79) inset;
   color: #999999;
   font-weight: bold;
   border: 1px solid #999999;
-  box-shadow: 1px 1px 4px #999999;
 }
 
 .modal__button:hover {
@@ -98,7 +105,6 @@
   align-items: center;
   width: 100px;
   background-color: #f0eaea;
-  box-shadow: 1px 1px 4px #999999;
 }
 
 .modal__add:hover, .modal__remove:hover {
@@ -109,7 +115,8 @@
 .modal__add, .modal__remove {
   padding: 2px 8px;
   font-weight: bold;
-  background: wheat;
+  background-color: wheat;
+  box-shadow: 0px 0px 10px -2px rgb(245, 187, 79)inset;
   color: #999999;
   border: 1px solid #999999;
 }
@@ -124,14 +131,23 @@
   text-align: center;
 }
 
-@media(min-width: 768px) {
+.modal__empty {
+  margin-top: 30vh;
+  text-align: center;
+  opacity: 0.2;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+@media(min-width: 760px) {
   .modal {
-    margin-top: 70px;
+    margin-top: -24px;
+    height: 87vh;
+  }
+  .modal__section-wrapper {
+    min-height: 71.5vh;
   }
 
-  .modal__section {
-    padding: 20px 20px 0;
-  }
 }
 
 @media(min-width: 1024px) {
@@ -140,19 +156,102 @@
     top: 2px;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.6);
+    height: 110vh;
   }
 
   .modal__wrapper {
     position: fixed;
-    border: 1px solid black;
-    height: 89vh;
+    height: 82vh;
     overflow: auto;
     background-color: #fff;
     width: 400px;
+    top: 76px;
     right: 0;
   }
 
-  .modal__section-wrapper {
-    min-height: 76vh;
+  .modal__empty {
+    margin-top: 30vh;
+    text-align: center;
+    opacity: 0.2;
+    font-weight: normal;
+    font-size: 1.2em;
   }
+
+  .modal__section-wrapper {
+    min-height: 71vh;
+  }
+}
+
+@media(min-width: 1440px) {
+  .modal__header {
+   margin-top: 20px;
+  }
+
+  .modal__close-modal {
+    font-size: 2em;
+    top: 26px;
+  }
+
+  .modal__wrapper {
+    height: 81vh;
+    width: 600px;
+  }
+
+  .modal__section-wrapper {
+    min-height: 68.5vh;
+  }
+
+  .modal__image {
+    height: 150px;
+  }
+
+  .modal__title {
+    font-size: 1.6em;
+  }
+
+  .modal__product-name {
+    font-size: 1.3em;
+    letter-spacing: 1.5px;
+  }
+
+  .modal__price {
+    font-size: 1.3em;
+  }
+
+  .modal__info {
+    width: 200px;
+    height: 150px;
+  }
+
+  .modal__price {
+    height: 150px;
+  }
+
+  .modal__installments {
+    margin-top: 18px;
+  }
+
+  .modal__button {
+    font-size: 0.9em;
+    padding: 6px;
+  }
+
+  .modal__count-button {
+    width: 140px;
+  }
+
+  .modal__add, .modal__remove {
+    padding: 8px 14px;
+  }
+
+  .modal__total-value {
+    font-size: 1.4em;
+    letter-spacing: 1.5px;
+  }
+
+  .modal__empty {
+    opacity: 0.3;
+    font-size: 1.5em;
+  }
+
 }

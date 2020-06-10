@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import reducer from './reducers/reducer';
+import dataReducer from './reducers/dataReducer';
 import cartReducer from './reducers/cartReducer';
 import productReducer from './reducers/productReducer';
+import modalReducer from './reducers/modalReducer';
 
 export default combineReducers({
-  reducer,
+  dataReducer,
   cartReducer,
   productReducer,
+  modalReducer,
 });

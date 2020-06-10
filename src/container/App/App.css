@@ -9,6 +9,7 @@
 
 body {
   -webkit-font-smoothing: antialiased;
+  background-color: rgb(223, 215, 215);
 }
 
 body, input, button {
@@ -20,25 +21,28 @@ button {
 }
 
 .container{
+  background-color: rgb(231, 225, 225);
   width: 100%;
   margin: 0 auto;
-  margin-top: 90px;
+  margin-top: 80px;
+  padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  min-height: 83vh;
+  min-height: 82.8vh;
+  box-shadow: 0px 0px 20px 20px rgb(231, 225, 225);
 }
 
 @media(min-width: 760px) {
   .container {
-    margin-top: 80px;
-    max-width: 800px;
+    margin-top: 70px;
+    max-width: 900px;
   }
 }
 
 @media(min-width: 1400px) {
   .container{
-    max-width: 800px;
-    border: 1px solid red;
+    max-width: 1200px;
+    min-height: 81.5vh;
   }
 }
 

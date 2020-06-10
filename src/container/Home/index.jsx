@@ -11,9 +11,13 @@ import Modal from '../../components/Modal';
 import './Home.css';
 
 export default function Home() {
-  const dispatch = useDispatch();
+  const store = useSelector((state) => state.dataReducer);
+  const { productToCart } = useSelector((state) => state.cartReducer);
+  const { isCartModal, isSearchModal } = useSelector(
+    (state) => state.modalReducer
+  );
 
-  const store = useSelector((state) => state.reducer);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (store.length > 0) {
@@ -26,18 +30,24 @@ export default function Home() {
     <>
       <Header />
 
-      {store.isModal && <Modal />}
+      {(isCartModal || isSearchModal) && (
+        <Modal productToCart={productToCart} />
+      )}
 
       <main className="container card">
         {store &&
           store.map((item, index) => (
-            <Link key={index} to={`/products/${index}`} className="card__link">
+            <Link
+              key={item.sizes.sku}
+              to={`/products/${index}`}
+              className="card__link"
+            >
               <article className="card__container">
                 {item.discount_percentage !== '' && (
                   <>
                     <FaTag className="card__tag" />
                     <span className="card__deal">
-                      {item.discount_percentage}
+                      -{item.discount_percentage}
                     </span>
                   </>
                 )}

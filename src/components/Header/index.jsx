@@ -1,15 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { FaSearch } from 'react-icons/fa';
 import { IoIosCart } from 'react-icons/io';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  toggleCartModal,
+  searchProductRequest,
+} from '../../store/actions/actions';
 import logo from '../../assets/images/logo.png';
 
 import './Header.css';
 
 export default function Header() {
-  const { productAmount } = useSelector((state) => state.cartReducer);
+  const { totalCount } = useSelector((state) => state.cartReducer);
+  const { isCartModal, isSearchModal } = useSelector(
+    (state) => state.modalReducer
+  );
+
+  const [search, setSearch] = useState('');
+
+  const dispatch = useDispatch();
+
+  const handleCartModal = () => {
+    dispatch(toggleCartModal(!isCartModal));
+  };
+
+  const handleSearch = (event) => {
+    dispatch(searchProductRequest(event.target.value));
+    setSearch(event.target.value);
+  };
+
+  useEffect(() => {
+    if (!isSearchModal) {
+      setSearch('');
+    }
+  }, [isSearchModal]);
 
   return (
     <header className="header">
@@ -17,20 +43,27 @@ export default function Header() {
         <Link to="/">
           <img className="header__logo" src={logo} alt="logo" />
         </Link>
+
         <div className="header__input-wrapper">
           <input
             className="header__input"
             type="text"
             placeholder="busque por produtos"
+            value={search}
+            onChange={handleSearch}
             id="search"
           />
+
           <FaSearch className="header__icon" />
-          <Link to="/" className="header__cart-counter">
+
+          <button
+            onClick={handleCartModal}
+            type="button"
+            className="header__cart-counter"
+          >
             <IoIosCart className="header__icon--cart" />
-            {productAmount && (
-              <h3 className="header__count">{productAmount}</h3>
-            )}
-          </Link>
+            {totalCount && <h3 className="header__count">{totalCount}</h3>}
+          </button>
         </div>
       </div>
     </header>

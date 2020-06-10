@@ -1,10 +1,11 @@
 .header {
   background: #1a0000;
+  box-shadow: 0px 4px 6px -2px #1a0000;
   width: 100%;
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: 3;
 }
 
 .header__wrapper {
@@ -31,9 +32,8 @@
 }
 
 .header__input {
-  flex: 1;
-  min-width: 20px;
   margin-right: 2px;
+  width: 230px;
 }
 
 .header__input::placeholder {
@@ -49,14 +49,15 @@
 }
 
 .header__icon--cart {
-  margin-left: 10px;
+  margin-left: 2px;
   color: wheat;
   font-size: 1.5em;
 }
 
 .header__cart-counter {
   position: relative;
-  text-decoration: none;
+  background-color: #1a0000;
+  border: none;
 }
 
 .header__count {
@@ -86,11 +87,68 @@
     justify-content: space-between;
     padding: 10px;
   }
+
+  .header__input-wrapper {
+    width: 100%;
+    max-width: 350px;
+  }
+
   .header__icon--cart {
-    margin-right: 20px;
+    margin-left: 20px;
   }
 
   .header__count {
-    right: 12px;
+    right: -8px;
   }
+
+  .header__input {
+    width: 280px;
+  }
+}
+
+@media(min-width: 1440px) {
+  .header__wrapper {
+    max-width: 1200px;
+    padding: 20px;
+  }
+
+  .header__input-wrapper {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .header__input {
+    margin-right: 2px;
+    width: 300px;
+    height: 30px;
+  }
+
+  .header__input::placeholder {
+    color: #999;
+    font-size: 1.2em;
+    padding-left: 4px;
+  }
+
+  .header__icon {
+    margin-left: 8px;
+    color: wheat;
+    font-size: 1.5em;
+  }
+
+  .header__icon--cart {
+    margin-left: 20px;
+    font-size: 2em;
+  }
+
+  .header__count {
+    right: -14px;
+    top: 16px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
 }

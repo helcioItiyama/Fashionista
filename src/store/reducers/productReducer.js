@@ -1,7 +1,16 @@
-import { UPDATE_PRODUCT_AMOUNT } from '../actions/actionsTypes';
+import { CHOOSE_PRODUCT } from '../actions/actionsTypes';
 
 const initialState = {
-  product: [],
+  id: '',
+  product: {},
+  productId: 0,
+  installments: 0,
+  count: 0,
+  size: '',
+  totalProductPrice: '',
+  totalInstallment: '',
+  formattedTotalProductPrice: '',
+  formattedTotalInstallment: '',
 };
 
 export default function productReducer(
@@ -9,11 +18,19 @@ export default function productReducer(
   { type, payload }
 ) {
   switch (type) {
-    case UPDATE_PRODUCT_AMOUNT:
+    case CHOOSE_PRODUCT:
       return {
         ...state,
-        index: payload.index,
-        product[payload.index]: payload.amount
+        id: payload.id,
+        product: payload.product,
+        productId: payload.id,
+        installments: payload.installments,
+        count: payload.count,
+        size: payload.size,
+        totalProductPrice: payload.totalProductPrice,
+        totalInstallment: payload.totalInstallment,
+        formattedTotalProductPrice: payload.formattedTotalProductPrice,
+        formattedTotalInstallment: payload.formattedTotalInstallment,
       };
 
     default:
