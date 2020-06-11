@@ -1,9 +1,11 @@
+/* eslint-disable no-nested-ternary */
 import React, { useEffect } from 'react';
 import { FaTag } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Header from '../../components/Header';
+import Loading from '../../components/Loading';
 import Footer from '../../components/Footer';
 import { getProducts } from '../../store/actions/actions';
 import Modal from '../../components/Modal';
@@ -11,7 +13,8 @@ import Modal from '../../components/Modal';
 import './Home.css';
 
 export default function Home() {
-  const store = useSelector((state) => state.dataReducer);
+  const { store, isError } = useSelector((state) => state.dataReducer);
+
   const { productToCart } = useSelector((state) => state.cartReducer);
   const { isCartModal, isSearchModal } = useSelector(
     (state) => state.modalReducer
@@ -20,11 +23,11 @@ export default function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (store.length > 0) {
+    if (store.length > 0 && !isError) {
       return;
     }
     dispatch(getProducts());
-  }, [dispatch, store]);
+  }, [dispatch, isError, store]);
 
   return (
     <>
@@ -35,7 +38,7 @@ export default function Home() {
       )}
 
       <main className="container card">
-        {store &&
+        {store.length > 0 ? (
           store.map((item, index) => (
             <Link
               key={item.sizes.sku}
@@ -80,9 +83,13 @@ export default function Home() {
                 </div>
               </article>
             </Link>
-          ))}
+          ))
+        ) : !isError ? (
+          <Loading />
+        ) : (
+          <div>Erro no banco de dados</div>
+        )}
       </main>
-
       <Footer />
     </>
   );

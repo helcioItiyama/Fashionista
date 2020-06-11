@@ -3,8 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { FaTag } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { getProducts, addToCartRequest } from '../../store/actions/actions';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ReactImageMagnify from 'react-image-magnify';
 
+import Loading from '../../components/Loading';
+import { getProducts, addToCartRequest } from '../../store/actions/actions';
 import Headers from '../../components/Header';
 import Footer from '../../components/Footer';
 import Modal from '../../components/Modal';
@@ -12,26 +16,26 @@ import Modal from '../../components/Modal';
 import './Products.css';
 
 export default function Products() {
-  const store = useSelector((state) => state.dataReducer);
+  const { isError, store } = useSelector((state) => state.dataReducer);
   const { productToCart } = useSelector((state) => state.cartReducer);
   const { isCartModal, isSearchModal } = useSelector(
     (state) => state.modalReducer
   );
 
-  const [selectedOption, setSelectedOption] = useState('');
   const [error, setError] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('');
 
   const dispatch = useDispatch();
 
-  const { id } = useParams();
-  const product = store.find((_, index) => index === Number(id));
-
   useEffect(() => {
-    if (store.length > 0) {
+    if (store.length > 0 && !isError) {
       return;
     }
     dispatch(getProducts());
-  }, [dispatch, store]);
+  }, [dispatch, store, isError]);
+
+  const { id } = useParams();
+  const product = store.find((_, index) => index === Number(id));
 
   const handleInput = (event) => {
     return setSelectedOption(event.target.id);
@@ -39,9 +43,11 @@ export default function Products() {
 
   const handleAddToCart = (event) => {
     if (selectedOption === '') {
+      toast.error('Escolha um tamanho');
       setError(true);
     } else {
       dispatch(addToCartRequest(selectedOption, product));
+      toast.success('Item adicionado com sucesso!');
       setError(false);
     }
     event.preventDefault();
@@ -51,18 +57,32 @@ export default function Products() {
     <>
       <Headers />
 
+      <ToastContainer />
+
       {(isCartModal || isSearchModal) && (
         <Modal productToCart={productToCart} />
       )}
 
-      {product && (
+      {product ? (
         <main className="container product">
-          {/* <section className="product__detail"> */}
           {product.image ? (
-            <img
+            <ReactImageMagnify
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...{
+                smallImage: {
+                  alt: 'Wristwatch by Ted Baker London',
+                  isFluidWidth: true,
+                  src: product.image,
+                },
+                largeImage: {
+                  src: product.image,
+                  width: 800,
+                  height: 1011.06,
+                },
+              }}
               className="product__image"
-              src={product.image}
-              alt={product.name}
+              enlargedImageContainerClassName="product__image-lens"
+              enlargedImagePosition="over"
             />
           ) : (
             <img
@@ -71,7 +91,6 @@ export default function Products() {
               alt={product.name}
             />
           )}
-          {/* </section> */}
 
           <section className="product__info">
             <div className="product__card">
@@ -141,6 +160,8 @@ export default function Products() {
             </div>
           </section>
         </main>
+      ) : (
+        <Loading />
       )}
       <Footer />
     </>

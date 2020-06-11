@@ -1,6 +1,7 @@
 import {
   GET_PRODUCTS,
   LOAD_PRODUCTS_SUCCESS,
+  LOAD_PRODUCTS_FAILURE,
   CHOOSE_PRODUCT,
   ADD_TO_CART_REQUEST,
   ADD_TO_CART_SUCCESS,
@@ -24,6 +25,10 @@ export const getProducts = () => ({
 export const loadProductsSuccess = (priceFormattedData) => ({
   type: LOAD_PRODUCTS_SUCCESS,
   payload: priceFormattedData,
+});
+
+export const loadProductsFailure = () => ({
+  type: LOAD_PRODUCTS_FAILURE,
 });
 
 export const chooseProduct = (product) => ({

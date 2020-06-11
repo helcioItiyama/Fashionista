@@ -1,4 +1,5 @@
-import { call, all, put, select, takeLatest } from 'redux-saga/effects';
+import { call, all, put, select, delay, takeLatest } from 'redux-saga/effects';
+
 import {
   GET_PRODUCTS,
   ADD_TO_CART_REQUEST,
@@ -14,6 +15,7 @@ import { numberFormat, priceFormat } from '../../utils/format';
 import {
   addToCartSuccess,
   loadProductsSuccess,
+  loadProductsFailure,
   updateCartProduct,
   chooseProduct,
   updateCounterRequest,
@@ -25,24 +27,28 @@ import {
 let priceFormattedData = [];
 
 function* loadProducts() {
-  const response = yield call(api.get);
-  const { data } = response;
+  try {
+    const response = yield call(api.get);
+    yield delay(1500);
+    const { data } = response;
 
-  const newData = data.map((number) => ({
-    ...number,
-    regularFormattedNumber: numberFormat(number.regular_price),
-    actualFormattedNumber: numberFormat(number.actual_price),
-    regular_price: priceFormat(number.regular_price),
-    actual_price: priceFormat(number.actual_price),
-  }));
+    const newData = data.map((number) => ({
+      ...number,
+      regularFormattedNumber: numberFormat(number.regular_price),
+      actualFormattedNumber: numberFormat(number.actual_price),
+      regular_price: priceFormat(number.regular_price),
+      actual_price: priceFormat(number.actual_price),
+    }));
 
-  priceFormattedData = newData.map((number) => ({
-    ...number,
-    regular_price: priceFormat(number.regularFormattedNumber),
-    actual_price: priceFormat(number.actualFormattedNumber),
-  }));
-
-  yield put(loadProductsSuccess(priceFormattedData));
+    priceFormattedData = newData.map((number) => ({
+      ...number,
+      regular_price: priceFormat(number.regularFormattedNumber),
+      actual_price: priceFormat(number.actualFormattedNumber),
+    }));
+    yield put(loadProductsSuccess(priceFormattedData));
+  } catch (error) {
+    yield put(loadProductsFailure());
+  }
 }
 
 function* updateCounter() {
@@ -218,7 +224,7 @@ function* removeFromCart({ id }) {
 
 function* searchProduct({ search }) {
   let getProducts = yield select((state) =>
-    state.dataReducer.filter((product) =>
+    state.dataReducer.store.filter((product) =>
       product.name.toLowerCase().includes(search.toLowerCase())
     )
   );
