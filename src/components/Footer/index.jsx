@@ -10,7 +10,7 @@ import './Footer.css';
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" data-testid="footer">
       <p className="footer__text">
         Copyright 2020 @ Fashionista - Brasil - Todos os direitos reservados
       </p>

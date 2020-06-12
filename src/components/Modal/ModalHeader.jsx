@@ -16,7 +16,7 @@ export default function ModalHeader() {
   };
 
   return (
-    <header className="modal__header">
+    <header className="modal__header" data-testid="modal__header">
       <button className="modal__close-modal" type="button">
         <IoMdCloseCircle
           className="modal__close-icon"

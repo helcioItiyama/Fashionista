@@ -1,0 +1,8 @@
+.error {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 3px 3px 4px #999999;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}

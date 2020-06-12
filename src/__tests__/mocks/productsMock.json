@@ -1,0 +1,224 @@
+[
+  {
+    "name": "VESTIDO TRANSPASSE BOW",
+    "color_slug": "tapecaria",
+    "color": "TAPEÇARIA",
+    "regular_price": "R$ 199,90",
+    "actual_price": "R$ 199,90",
+    "discount_percentage": "",
+    "installments": "3x R$ 66,63",
+    "image": "https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg",
+    "sizes": [
+      {
+        "available": false,
+        "size": "PP",
+        "sku": "5807_343_0_PP"
+      },
+      {
+        "available": true,
+        "size": "P",
+        "sku": "5807_343_0_P"
+      },
+      {
+        "available": true,
+        "size": "M",
+        "sku": "5807_343_0_M"
+      },
+      {
+        "available": true,
+        "size": "G",
+        "sku": "5807_343_0_G"
+      },
+      {
+        "available": false,
+        "size": "GG",
+        "sku": "5807_343_0_GG"
+      }
+    ]
+  },
+  {
+    "name": "REGATA ALCINHA FOLK",
+    "color_slug": "preto",
+    "color": "PRETO",
+    "regular_price": "R$ 99,90",
+    "actual_price": "R$ 99,90",
+    "discount_percentage": "",
+    "installments": "3x R$ 33,30",
+    "image": "https://viniciusvinna.netlify.app/assets/api-fashionista/20002570_002_catalog_1.jpg",
+    "sizes": [
+      {
+        "available": true,
+        "size": "PP",
+        "sku": "5723_40130843_0_PP"
+      },
+      {
+        "available": true,
+        "size": "P",
+        "sku": "5723_40130843_0_P"
+      },
+      {
+        "available": true,
+        "size": "M",
+        "sku": "5723_40130843_0_M"
+      },
+      {
+        "available": true,
+        "size": "G",
+        "sku": "5723_40130843_0_G"
+      },
+      {
+        "available": true,
+        "size": "GG",
+        "sku": "5723_40130843_0_GG"
+      }
+    ]
+  },
+  {
+    "name": "TOP CROPPED SUEDE",
+    "color_slug": "caramelo",
+    "color": "CARAMELO",
+    "regular_price": "R$ 129,90",
+    "actual_price": "R$ 129,90",
+    "discount_percentage": "",
+    "installments": "3x R$ 43,30",
+    "image": "https://viniciusvinna.netlify.app/assets/api-fashionista/20002575_027_catalog_1.jpg",
+    "sizes": [
+      {
+        "available": false,
+        "size": "PP",
+        "sku": "5733_1000054_0_PP"
+      },
+      {
+        "available": true,
+        "size": "P",
+        "sku": "5733_1000054_0_P"
+      },
+      {
+        "available": true,
+        "size": "M",
+        "sku": "5733_1000054_0_M"
+      },
+      {
+        "available": true,
+        "size": "G",
+        "sku": "5733_1000054_0_G"
+      },
+      {
+        "available": false,
+        "size": "GG",
+        "sku": "5733_1000054_0_GG"
+      }
+    ]
+  },
+  {
+    "name": "BATA DECOTE FLUID",
+    "color_slug": "mini-folk",
+    "color": "MINI FOLK",
+    "regular_price": "R$ 149,90",
+    "actual_price": "R$ 149,90",
+    "discount_percentage": "",
+    "installments": "3x R$ 49,97",
+    "image": "https://viniciusvinna.netlify.app/assets/api-fashionista/20002581_614_catalog_1.jpg",
+    "sizes": [
+      {
+        "available": false,
+        "size": "PP",
+        "sku": "5749_341_0_PP"
+      },
+      {
+        "available": true,
+        "size": "P",
+        "sku": "5749_341_0_P"
+      },
+      {
+        "available": false,
+        "size": "M",
+        "sku": "5749_341_0_M"
+      },
+      {
+        "available": true,
+        "size": "G",
+        "sku": "5749_341_0_G"
+      },
+      {
+        "available": true,
+        "size": "GG",
+        "sku": "5749_341_0_GG"
+      }
+    ]
+  },
+  {
+    "name": "T-SHIRT LEATHER DULL",
+    "color_slug": "marinho",
+    "color": "MARINHO",
+    "regular_price": "R$ 139,90",
+    "actual_price": "R$ 119,90",
+    "discount_percentage": "12%",
+    "installments": "3x R$ 39,97",
+    "image": "",
+    "sizes": [
+      {
+        "available": true,
+        "size": "PP",
+        "sku": "5793_1000032_0_PP"
+      },
+      {
+        "available": true,
+        "size": "P",
+        "sku": "5793_1000032_0_P"
+      },
+      {
+        "available": true,
+        "size": "M",
+        "sku": "5793_1000032_0_M"
+      },
+      {
+        "available": false,
+        "size": "G",
+        "sku": "5793_1000032_0_G"
+      },
+      {
+        "available": false,
+        "size": "GG",
+        "sku": "5793_1000032_0_GG"
+      }
+    ]
+  },
+  {
+    "name": "CAMISA SUEDE SPAN",
+    "color_slug": "burgundy",
+    "color": "BURGUNDY",
+    "regular_price": "R$ 189,90",
+    "actual_price": "R$ 189,90",
+    "discount_percentage": "",
+    "installments": "3x R$ 63,30",
+    "image": "https://viniciusvinna.netlify.app/assets/api-fashionista/20002584_035_catalog_1.jpg",
+    "sizes": [
+      {
+        "available": false,
+        "size": "PP",
+        "sku": "5755_1000070_0_PP"
+      },
+      {
+        "available": true,
+        "size": "P",
+        "sku": "5755_1000070_0_P"
+      },
+      {
+        "available": true,
+        "size": "M",
+        "sku": "5755_1000070_0_M"
+      },
+      {
+        "available": false,
+        "size": "G",
+        "sku": "5755_1000070_0_G"
+      },
+      {
+        "available": false,
+        "size": "GG",
+        "sku": "5755_1000070_0_GG"
+      }
+    ]
+  }
+]

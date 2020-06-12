@@ -82,7 +82,6 @@
 
 @media(min-width: 760px) {
   .card__link {
-    box-shadow: initial;
     transition: transform 2000ms;
     height: fit-content;
   }
@@ -100,7 +99,6 @@
   .card .card__link:focus,
   .card .card__link:hover {
     transform: scale(1.2);
-    box-shadow: 0px 2px 6px #999999;
     z-index: 2;
   }
 }

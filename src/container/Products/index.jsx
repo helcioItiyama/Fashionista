@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react';
 import { FaTag } from 'react-icons/fa';
@@ -9,9 +10,8 @@ import ReactImageMagnify from 'react-image-magnify';
 
 import Loading from '../../components/Loading';
 import { getProducts, addToCartRequest } from '../../store/actions/actions';
-import Headers from '../../components/Header';
-import Footer from '../../components/Footer';
 import Modal from '../../components/Modal';
+import Error from '../../components/Error';
 
 import './Products.css';
 
@@ -54,116 +54,119 @@ export default function Products() {
   };
 
   return (
-    <>
-      <Headers />
-
+    <div data-testid="products">
       <ToastContainer />
 
       {(isCartModal || isSearchModal) && (
         <Modal productToCart={productToCart} />
       )}
 
-      {product ? (
-        <main className="container product">
-          {product.image ? (
-            <ReactImageMagnify
-              // eslint-disable-next-line react/jsx-props-no-spreading
-              {...{
-                smallImage: {
-                  alt: 'Wristwatch by Ted Baker London',
-                  isFluidWidth: true,
-                  src: product.image,
-                },
-                largeImage: {
-                  src: product.image,
-                  width: 800,
-                  height: 1011.06,
-                },
-              }}
-              className="product__image"
-              enlargedImageContainerClassName="product__image-lens"
-              enlargedImagePosition="over"
-            />
-          ) : (
-            <img
-              className="product__image"
-              src="https://placehold.it/470x595?text=PRODUTO%20SEM%20FOTO"
-              alt={product.name}
-            />
-          )}
+      <main className="container product">
+        {product ? (
+          <>
+            {product.image ? (
+              <ReactImageMagnify
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...{
+                  smallImage: {
+                    alt: 'Wristwatch by Ted Baker London',
+                    isFluidWidth: true,
+                    src: product.image,
+                  },
+                  largeImage: {
+                    src: product.image,
+                    width: 800,
+                    height: 1011.06,
+                  },
+                }}
+                className="product__image"
+                enlargedImageContainerClassName="product__image-lens"
+                enlargedImagePosition="over"
+              />
+            ) : (
+              <img
+                className="product__image"
+                src="https://placehold.it/470x595?text=PRODUTO%20SEM%20FOTO"
+                alt={product.name}
+              />
+            )}
 
-          <section className="product__info">
-            <div className="product__card">
-              {product.discount_percentage && (
-                <>
-                  <FaTag className="product__tag" />
-                  <span className="product__deal">
-                    -{product.discount_percentage}
-                  </span>
-                </>
-              )}
-              <div>
-                <h2 className="product__name">{product.name}</h2>
-                <h3 className="product__color">Cor: {product.color_slug}</h3>
-              </div>
-
-              <p className="product__price">
-                {product.actual_price}
-                <span className="product__installments">
-                  {product.installments}
-                </span>
-              </p>
-
-              {product.regular_price !== product.actual_price && (
-                <p className="product__normal-price">{product.regular_price}</p>
-              )}
-              <form onSubmit={handleAddToCart} className="product__form">
-                <p className="product__form-title">Escolha o tamanho</p>
-                <div className="product__input__options">
-                  {product.sizes &&
-                    product.sizes.map((item) => (
-                      <>
-                        {item.available === true && (
-                          <>
-                            <input
-                              id={item.sku}
-                              className="product__input"
-                              onChange={handleInput}
-                              type="radio"
-                              name="size"
-                              key={item.sku}
-                              checked={selectedOption === item.sku}
-                            />
-                            <label
-                              className="product__option"
-                              htmlFor={item.sku}
-                            >
-                              {item.size}
-                            </label>
-                          </>
-                        )}
-                      </>
-                    ))}
+            <section className="product__info">
+              <div className="product__card">
+                {product.discount_percentage && (
+                  <>
+                    <FaTag className="product__tag" />
+                    <span className="product__deal">
+                      -{product.discount_percentage}
+                    </span>
+                  </>
+                )}
+                <div>
+                  <h2 className="product__name">{product.name}</h2>
+                  <h3 className="product__color">Cor: {product.color_slug}</h3>
                 </div>
-                {error && (
-                  <p className="product__error">
-                    É necessário escolher um tamanho
+
+                <p className="product__price">
+                  {product.actual_price}
+                  <span className="product__installments">
+                    {product.installments}
+                  </span>
+                </p>
+
+                {product.regular_price !== product.actual_price && (
+                  <p className="product__normal-price">
+                    {product.regular_price}
                   </p>
                 )}
-                <button className="product__button" type="submit">
-                  Adicione ao Carrinho
-                </button>
-              </form>
-              <Link to="/" className="product__button">
-                <h5>Voltar para página inicial</h5>
-              </Link>
-            </div>
-          </section>
-        </main>
-      ) : (
-        <Loading />
-      )}
-      <Footer />
-    </>
+                <form onSubmit={handleAddToCart} className="product__form">
+                  <p className="product__form-title">Escolha o tamanho</p>
+                  <div className="product__input__options">
+                    {product.sizes &&
+                      product.sizes.map((item) => (
+                        <>
+                          {item.available === true && (
+                            <>
+                              <input
+                                id={item.sku}
+                                className="product__input"
+                                onChange={handleInput}
+                                type="radio"
+                                name="size"
+                                key={item.sku}
+                                checked={selectedOption === item.sku}
+                              />
+                              <label
+                                className="product__option"
+                                htmlFor={item.sku}
+                              >
+                                {item.size}
+                              </label>
+                            </>
+                          )}
+                        </>
+                      ))}
+                  </div>
+                  {error && (
+                    <p className="product__error">
+                      É necessário escolher um tamanho
+                    </p>
+                  )}
+                  <button className="product__button" type="submit">
+                    Adicione ao Carrinho
+                  </button>
+                </form>
+                <Link to="/" className="product__button">
+                  <h5>Voltar para página inicial</h5>
+                </Link>
+              </div>
+            </section>
+          </>
+        ) : isError ? (
+          <Error />
+        ) : (
+          <Loading />
+        )}
+      </main>
+    </div>
   );
 }

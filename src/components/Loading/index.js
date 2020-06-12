@@ -3,7 +3,7 @@ import './Loading.css';
 
 export default function Loading() {
   return (
-    <div className="wrapper">
+    <div className="wrapper" data-testid="loading">
       <div className="circle" />
       <div className="circle" />
       <div className="circle" />

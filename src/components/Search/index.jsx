@@ -5,7 +5,7 @@ export default function Search() {
   const { searchProducts } = useSelector((state) => state.modalReducer);
 
   return (
-    <>
+    <div data-testid="search">
       {searchProducts.length > 0 ? (
         searchProducts.map((product) => (
           // eslint-disable-next-line react/no-array-index-key
@@ -43,6 +43,6 @@ export default function Search() {
           <h2 className="modal__empty">Nenhum item encontrado :(</h2>
         </section>
       )}
-    </>
+    </div>
   );
 }

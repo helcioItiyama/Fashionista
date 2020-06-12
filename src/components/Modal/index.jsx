@@ -16,7 +16,7 @@ export default function Modal({ productToCart }) {
   );
 
   return (
-    <article className="modal">
+    <article className="modal" data-testid="modal">
       <div className="modal__wrapper">
         <ModalHeader />
 

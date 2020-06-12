@@ -24,7 +24,7 @@ export default function Cart({ cartList }) {
   };
 
   return (
-    <>
+    <div data-testid="cart">
       {cartList.length > 0 ? (
         cartList.map(
           ({
@@ -101,7 +101,7 @@ export default function Cart({ cartList }) {
           <h2 className="modal__empty">Seu carrinho está vazio :(</h2>
         </section>
       )}
-    </>
+    </div>
   );
 }
 

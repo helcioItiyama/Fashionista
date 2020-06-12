@@ -4,11 +4,10 @@ import { FaTag } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Header from '../../components/Header';
 import Loading from '../../components/Loading';
-import Footer from '../../components/Footer';
 import { getProducts } from '../../store/actions/actions';
 import Modal from '../../components/Modal';
+import Error from '../../components/Error';
 
 import './Home.css';
 
@@ -30,9 +29,7 @@ export default function Home() {
   }, [dispatch, isError, store]);
 
   return (
-    <>
-      <Header />
-
+    <div data-testid="card">
       {(isCartModal || isSearchModal) && (
         <Modal productToCart={productToCart} />
       )}
@@ -71,7 +68,9 @@ export default function Home() {
                 )}
 
                 <div className="card__footer">
-                  <h3 className="card__title">{item.name}</h3>
+                  <h3 className="card__title" data-testid="name">
+                    {item.name}
+                  </h3>
                   <p className="card__price">
                     {item.regular_price !== item.actual_price && (
                       <span className="card__price--discount">
@@ -87,10 +86,9 @@ export default function Home() {
         ) : !isError ? (
           <Loading />
         ) : (
-          <div>Erro no banco de dados</div>
+          <Error />
         )}
       </main>
-      <Footer />
-    </>
+    </div>
   );
 }

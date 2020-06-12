@@ -1,0 +1,34 @@
+[
+  {
+    "count": 1,
+    "formattedTotalInstallment": "R$ 33,30",
+    "formattedTotalProductPrice": "R$ 99,90",
+    "id": "5723_40130843_0_PP",
+    "installments": "3",
+    "product": {
+      "actualFormattedNumber": 9990,
+      "actual_price": "R$ 99,90",
+      "code_color": "20002570_614",
+      "color": "PRETO",
+      "color_slug": "preto",
+      "discount_percentage": "",
+      "image": "https://viniciusvinna.netlify.app/assets/api-fashionista/20002570_002_catalog_1.jpg",
+      "installments": "3x R$ 33,30",
+      "name": "REGATA ALCINHA FOLK",
+      "on_sale": false,
+      "regularFormattedNumber": 9990,
+      "regular_price": "R$ 99,90",
+      "sizes": [
+        {"available": true, "size": "PP", "sku": "5723_40130843_0_PP"},
+        {"available": true, "size": "P", "sku": "5723_40130843_0_P"},
+        {"available": true, "size": "M", "sku": "5723_40130843_0_M"},
+        {"available": true, "size": "G", "sku": "5723_40130843_0_G"},
+        {"available": true, "size": "GG", "sku": "5723_40130843_0_GG"}
+      ]
+    },
+    "productId": "5723_40130843_0_PP",
+    "size": "PP",
+    "totalInstallment": 3330,
+    "totalProductPrice": 9990
+  }
+]

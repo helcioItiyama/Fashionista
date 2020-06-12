@@ -38,7 +38,7 @@ export default function Header() {
   }, [isSearchModal]);
 
   return (
-    <header className="header">
+    <header className="header" data-testid="header">
       <div className="header__wrapper">
         <Link to="/">
           <img className="header__logo" src={logo} alt="logo" />
