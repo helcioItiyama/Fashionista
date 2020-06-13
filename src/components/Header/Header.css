@@ -33,6 +33,7 @@
 
 .header__input {
   margin-right: 2px;
+  height: 30px;
   width: 230px;
 }
 
@@ -45,13 +46,13 @@
 .header__icon {
   margin-left: 2px;
   color: wheat;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .header__icon--cart {
   margin-left: 2px;
   color: wheat;
-  font-size: 1.5em;
+  font-size: 1.9em;
 }
 
 .header__cart-counter {
@@ -73,8 +74,29 @@
   padding: 2px;
   font-size: 0.8em;
   font-weight: bold;
-  background-color: red;
   color: wheat;
+  background-color: red;
+}
+
+@media(min-width: 375px) {
+  .header__input-wrapper {
+    margin-top: 10px;
+    max-width: 330px;
+  }
+
+  .header__input {
+    width: 300px;
+  }
+
+  .header__icon--cart {
+    margin-left: 20px;
+  }
+}
+
+@media(min-width: 425px) {
+  .header__input-wrapper {
+    max-width: 380px;
+  }
 }
 
 @media(min-width: 760px) {
@@ -91,6 +113,7 @@
   .header__input-wrapper {
     width: 100%;
     max-width: 350px;
+    margin-right: 14px;
   }
 
   .header__icon--cart {

@@ -134,11 +134,11 @@
   border-radius: 4px;
   background: #1a0000;
   color: wheat;
-  padding-top: 8px;
+  padding-top: 16px;
   text-decoration: none;
   font-size: 1em;
   text-align: center;
-  padding-bottom: 8px;
+  padding-bottom: 16px;
   font-weight: bold;
   margin-top: 10px;
   letter-spacing: 1px;
@@ -148,6 +148,12 @@
   color: #1a0000;
   background: wheat;
   box-shadow: 1px 4px 8px -3px #1a0000;
+}
+
+@media(min-width: 320px) {
+  .product {
+    padding-top: 46px;
+  }
 }
 
 @media(min-width: 370px) {
@@ -183,6 +189,7 @@
     width: 460px;
     height: 540px;
     margin-left: 10px;
+    position: relative;
   }
 
   .product__card {
@@ -193,8 +200,8 @@
   }
 
   .product__error {
-    position: fixed;
-    top: 440px;
+    position: absolute;
+    top: 300px;
   }
 
   .product__input__options {
@@ -256,8 +263,7 @@
   }
 
   .product__error {
-    position: fixed;
-    top: 440px;
+    top: 37 0px;
   }
 
   .product__form {

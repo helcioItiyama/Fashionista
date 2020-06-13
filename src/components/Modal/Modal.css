@@ -2,7 +2,7 @@
   top: 98px;
   background-color: #fff;
   width: 100vw;
-  height: 83vh;
+  height: 87vh;
   position: fixed;
   overflow: auto;
   z-index: 3;
@@ -11,7 +11,7 @@
 .modal__header {
   background-color: wheat;
   box-shadow: 0px 0px 20px -1px rgb(245, 187, 79) inset;
-  padding: 12px;
+  padding: 20px 12px;
   display: flex;
   align-items: center;
 }
@@ -20,10 +20,10 @@
   position: absolute;
   border: none;
   color: black;
-  font-size: 1.5em;
+  font-size: 2em;
   background-color: transparent;
   left: 10px;
-  top: 12px;
+  top: 16px;
 }
 
 .modal__title {
@@ -31,7 +31,7 @@
 }
 
 .modal__section-wrapper {
-  min-height: 67vh;
+  min-height: 70vh;
 }
 
 .modal__section {
@@ -103,7 +103,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100px;
+  width: 110px;
   background-color: #f0eaea;
 }
 
@@ -113,7 +113,7 @@
 }
 
 .modal__add, .modal__remove {
-  padding: 2px 8px;
+  padding: 6px 12px;
   font-weight: bold;
   background-color: wheat;
   box-shadow: 0px 0px 10px -2px rgb(245, 187, 79)inset;
@@ -122,7 +122,7 @@
 }
 
 .modal__footer {
-  padding: 12px;
+  padding: 20px 12px;
   background: #1a0000;
 }
 
@@ -139,13 +139,29 @@
   font-size: 1.2em;
 }
 
+@media(min-width: 375px) {
+  .modal {
+    top: 114px;
+    height: 84vh;
+  }
+
+  .modal__section-wrapper {
+    min-height: 67.3vh;
+  }
+
+  .modal__button {
+    padding: 6px;
+    font-size: 1em;
+  }
+}
+
 @media(min-width: 760px) {
   .modal {
-    margin-top: -24px;
-    height: 87vh;
+    top: 70px;
+    height: 91vh;
   }
   .modal__section-wrapper {
-    min-height: 71.5vh;
+    min-height: 74vh;
   }
 
 }
