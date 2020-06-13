@@ -79,8 +79,17 @@
   margin-right: 10px;
 }
 
+@media(min-width: 375px) {
+  .card {
+    padding-top: 40px;
+  }
+}
 
 @media(min-width: 760px) {
+  .card {
+    padding-top: 16px;
+  }
+
   .card__link {
     transition: transform 2000ms;
     height: fit-content;

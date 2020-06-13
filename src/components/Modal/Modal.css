@@ -1,8 +1,8 @@
 .modal {
-  top: 98px;
+  top: 104px;
   background-color: #fff;
   width: 100vw;
-  height: 87vh;
+  height: 90vh;
   position: fixed;
   overflow: auto;
   z-index: 3;
@@ -31,7 +31,7 @@
 }
 
 .modal__section-wrapper {
-  min-height: 70vh;
+  min-height: 61vh;
 }
 
 .modal__section {
@@ -146,7 +146,7 @@
   }
 
   .modal__section-wrapper {
-    min-height: 67.3vh;
+    min-height: 60vh;
   }
 
   .modal__button {
@@ -194,7 +194,7 @@
   }
 
   .modal__section-wrapper {
-    min-height: 71vh;
+    min-height: 67vh;
   }
 }
 
@@ -214,7 +214,7 @@
   }
 
   .modal__section-wrapper {
-    min-height: 68.5vh;
+    min-height: 64vh;
   }
 
   .modal__image {
