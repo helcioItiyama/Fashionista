@@ -3,6 +3,7 @@
   box-shadow: 0px 4px 6px -2px #1a0000;
   width: 100%;
   position: fixed;
+  padding: 6px 0;
   top: 0;
   right: 0;
   z-index: 3;
@@ -26,15 +27,17 @@
 
 .header__input-wrapper {
   display: flex;
+  margin-top: 8px;
+  margin-left: 4px;
   align-items: center;
   width: 100%;
-  max-width: 280px;
+  max-width: 290px;
 }
 
 .header__input {
   margin-right: 2px;
   height: 30px;
-  width: 230px;
+  width: 220px;
 }
 
 .header__input::placeholder {
@@ -50,7 +53,7 @@
 }
 
 .header__icon--cart {
-  margin-left: 2px;
+  margin-left: 8px;
   color: wheat;
   font-size: 1.9em;
 }
@@ -80,22 +83,32 @@
 
 @media(min-width: 375px) {
   .header__input-wrapper {
-    margin-top: 10px;
+    margin-left: 12px;
+    margin-top: 14px;
     max-width: 330px;
   }
 
   .header__input {
-    width: 300px;
+    width: 220px;
   }
 
   .header__icon--cart {
-    margin-left: 20px;
+    margin-left: 40px;
   }
 }
 
 @media(min-width: 425px) {
   .header__input-wrapper {
+    margin-top: 4px;
     max-width: 380px;
+  }
+
+  .header__input {
+    width: 280px;
+  }
+
+  .header__icon--cart {
+    margin-left: 30px;
   }
 }
 

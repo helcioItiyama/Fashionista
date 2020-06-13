@@ -1,5 +1,5 @@
 .product {
-  padding-top: 36px;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
 }
@@ -150,21 +150,29 @@
   box-shadow: 1px 4px 8px -3px #1a0000;
 }
 
-@media(min-width: 320px) {
-  .product {
-    padding-top: 46px;
-  }
-}
-
 @media(min-width: 370px) {
+  .product {
+    padding-top: 70px;
+  }
+
   .product__name {
     max-width: 270px;
   }
 }
 
 @media(min-width: 425px) {
+  .product {
+    padding-top: 50px;
+  }
+
   .product__name {
     max-width: 320px;
+  }
+}
+
+@media(min-width: 768px) {
+  .product {
+    padding-top: 30px;
   }
 }
 
