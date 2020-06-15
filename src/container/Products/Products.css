@@ -209,7 +209,7 @@
 
   .product__error {
     position: absolute;
-    top: 300px;
+    top: -170px;
   }
 
   .product__input__options {
