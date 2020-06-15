@@ -36,10 +36,10 @@ export default function Home() {
 
       <main className="container card">
         {store.length > 0 ? (
-          store.map((item, index) => (
+          store.map((item) => (
             <Link
-              key={item.sizes.sku}
-              to={`/products/${index}`}
+              key={item.productId}
+              to={`/products/${item.productId}`}
               className="card__link"
             >
               <article className="card__container">

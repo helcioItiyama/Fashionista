@@ -114,7 +114,7 @@
 
 @media(min-width: 760px) {
   .header__wrapper {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -126,11 +126,10 @@
   .header__input-wrapper {
     width: 100%;
     max-width: 350px;
-    margin-right: 14px;
   }
 
   .header__icon--cart {
-    margin-left: 20px;
+    margin-left: 5px;
   }
 
   .header__count {

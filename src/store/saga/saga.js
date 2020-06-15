@@ -32,12 +32,13 @@ function* loadProducts() {
     yield delay(1500);
     const { data } = response;
 
-    const newData = data.map((number) => ({
+    const newData = data.map((number, index) => ({
       ...number,
       regularFormattedNumber: numberFormat(number.regular_price),
       actualFormattedNumber: numberFormat(number.actual_price),
       regular_price: priceFormat(number.regular_price),
       actual_price: priceFormat(number.actual_price),
+      productId: index
     }));
 
     priceFormattedData = newData.map((number) => ({

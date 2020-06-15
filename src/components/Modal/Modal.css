@@ -31,11 +31,12 @@
 }
 
 .modal__section-wrapper {
-  min-height: 69vh;
+  min-height: 58vh;
 }
 
 .modal__section {
   padding: 20px 10px 0;
+  color: #1a0000;
 }
 
 .modal__section-border {
@@ -145,10 +146,6 @@
     height: 90vh;
   }
 
-  .modal__section-wrapper {
-    min-height: 67.3vh;
-  }
-
   .modal__button {
     padding: 6px;
     font-size: 1em;
@@ -159,9 +156,6 @@
   .modal {
     top: 114px;
   }
-  .modal__section-wrapper {
-    min-height: 70vh;
-  }
 }
 
 @media(min-width: 760px) {
@@ -170,7 +164,7 @@
     height: 91vh;
   }
   .modal__section-wrapper {
-    min-height: 74vh;
+    min-height: 68vh;
   }
 
 }
@@ -202,19 +196,16 @@
     font-size: 1.2em;
   }
 
-  .modal__section-wrapper {
-    min-height: 67vh;
-  }
 }
 
 @media(min-width: 1440px) {
   .modal__header {
-   margin-top: 20px;
+   margin-top: 32px;
   }
 
   .modal__close-modal {
     font-size: 2em;
-    top: 26px;
+    top: 50px;
   }
 
   .modal__wrapper {

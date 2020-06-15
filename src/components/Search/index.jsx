@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export default function Search() {
   const { searchProducts } = useSelector((state) => state.modalReducer);
@@ -9,7 +10,11 @@ export default function Search() {
       {searchProducts.length > 0 ? (
         searchProducts.map((product) => (
           // eslint-disable-next-line react/no-array-index-key
-          <section className="modal__section" key={product.sizes[0].sku}>
+          <Link
+            to={`/products/${product.productId}`}
+            className="modal__section"
+            key={product.sizes[0].sku}
+          >
             <div className="modal__section-border">
               {product.image ? (
                 <img
@@ -36,7 +41,7 @@ export default function Search() {
                 </div>
               </div>
             </div>
-          </section>
+          </Link>
         ))
       ) : (
         <section className="modal__section">
