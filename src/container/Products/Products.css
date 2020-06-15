@@ -207,11 +207,6 @@
 
   }
 
-  .product__error {
-    position: absolute;
-    top: -170px;
-  }
-
   .product__input__options {
     margin-bottom: 60px;
   }
@@ -227,12 +222,6 @@
   .product__price {
     margin-top: auto;
     margin-bottom: 10px;
-  }
-}
-
-@media(min-width: 1313px) {
-  .product__error {
-    top: 490px;
   }
 }
 
@@ -268,10 +257,6 @@
     width: 400px;
     height: 500px;
     margin: 20px auto;
-  }
-
-  .product__error {
-    top: 37 0px;
   }
 
   .product__form {
