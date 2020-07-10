@@ -7,7 +7,7 @@
 This project was developed for the final challenge of the Codenation Bootcamp. 
 
 <p align="center">
-    <img alt ="recipes list" src="https://github.com/helcioItiyama/fashionista/blob/master/src/assets/images/fashionista.gif" width= "600px"/>
+    <img alt ="recipes list" src="https://github.com/helcioItiyama/fashionista/blob/master/src/assets/images/fashionista.gif"/>
 </p>
 
 
